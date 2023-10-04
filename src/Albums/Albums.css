@@ -1,0 +1,67 @@
+.albums-card>button{
+    border: 2px solid rgb(199, 197, 197);
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+width: 100%;
+
+}
+
+
+.albums-card{
+    width:350px;
+    height:488px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border: 1px solid grey;
+
+}
+
+.albums-card>img{
+    height:300px;
+    width: 100%;
+}
+
+.albums-card>h2{
+    padding-left: 20px;
+    padding-top: 10px;
+
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.header-first{
+    padding-left: 20px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    
+}
+
+.header-second{
+    padding-left: 20px;
+    padding-top: 20px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    
+}
+
+.header-third{
+    padding-left: 20px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    
+    
+}
+
+.card-ctr{
+    gap:30px;
+}
+
+.stars-ctr{
+    padding-left: 25px;
+    padding-top: 40px;
+}

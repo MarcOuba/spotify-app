@@ -1,0 +1,71 @@
+.spotLogin{
+    height: 200px;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.loginImg{
+    position: relative;
+    height: 150px;
+    margin-left: 20px;
+}
+
+.sec-2-login{
+    height:100vh;
+   background: rgb(218, 215, 215);
+}
+
+
+.login-ctr{
+    margin-top: -200px;
+    height: 80px;
+  width: 500px;
+}
+
+.btn-spot-img{
+    position: relative;
+    left: 380px;
+    top:-80px;
+    
+    height: 80px;
+}
+
+.btn-login{
+    
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid grey;
+}
+
+
+.btn-login:hover{
+    
+background-color: aliceblue;
+}
+
+@media screen and (max-width: 600px) {
+    .btn-login {
+      height: 100%;
+      width: 250px;
+      font-size: 20px;
+      
+     
+     
+    }
+  
+    .btn-spot-img {
+      position: relative;
+      left: 60px;
+      top: 0;
+     
+    }
+  
+    .login-ctr {
+      width: 100%;
+      
+    }
+  }
