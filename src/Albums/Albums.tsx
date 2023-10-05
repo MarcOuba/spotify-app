@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import Loading from "../loading/loading";
+import { useEffect } from "react";
 
 function Albums() {
 
@@ -16,9 +17,14 @@ function Albums() {
 const navigate=useNavigate();
 const accessToken = localStorage.getItem("token");
 
-if(!accessToken){
-    navigate("/");
-}
+useEffect(() => {
+    if(!accessToken){
+      alert("You don`t have access to spotify. Try logging in again or check your account.")
+      navigate("/");
+  }
+
+
+})
 
 const { data : artist, isLoading :isLoadingArtist, isError:isErrorArtist } = useQuery(
   "searchArtists2",
@@ -72,7 +78,6 @@ const { data : artist, isLoading :isLoadingArtist, isError:isErrorArtist } = use
             
             
           } catch (error: any) {
-            console.log(error)
            if(error.response.data.error.message == "The access token expired"){
             navigate("/");
            }

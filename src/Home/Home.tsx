@@ -14,7 +14,8 @@ import { setScreenWidth } from "../store.tsx";
 function Home() {
   
 const navigate=useNavigate();
-  
+  var url=window.location.href;
+  var accessToken = "";
 const dispatch = useDispatch();
 
   const handleResize = () => {
@@ -22,6 +23,15 @@ const dispatch = useDispatch();
   };
 
   useEffect(() => {
+
+    accessToken = new URL(url).hash.split("&")[0].substring(14);
+    localStorage.setItem("token" , accessToken);
+    if(!accessToken){
+      alert("You don`t have access to spotify. Try logging in again or check your account.")
+      navigate("/");
+  }
+
+
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -29,11 +39,9 @@ const dispatch = useDispatch();
     };
   }, [dispatch]);
    
-   var accessToken =localStorage.getItem("token");
 
-   if(!accessToken){
-    navigate("/");
-}
+
+
 
 
   const screenWidth = useSelector((state: any) => state.screenWidth);
@@ -45,6 +53,9 @@ const dispatch = useDispatch();
   const { data, isLoading, isError, refetch } = useQuery(
     "searchArtists",
    async() => {
+
+    accessToken = new URL(url).hash.split("&")[0].substring(14);
+
 if(searchRef.current != ""){
     try {
         const response: any = await axios.get(
@@ -59,6 +70,7 @@ if(searchRef.current != ""){
         
         
       } catch (error: any) {
+        console.log(error)
        if(error.response.data.error.message == "The access token expired"){
         navigate("/");
        }

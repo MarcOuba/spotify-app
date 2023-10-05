@@ -17,6 +17,8 @@ function LoginPage() {
   };
 
   useEffect(() => {
+
+    
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -60,10 +62,10 @@ url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
 url += '&state=' + encodeURIComponent(state);
 
 
-   var accessToken : string = new URL(url).hash.split("&")[0].substring(14);
+   
    
 
-   localStorage.setItem("token" , accessToken)
+   
 
 return url;
 
