@@ -96,7 +96,7 @@ const { data : artist, isLoading :isLoadingArtist, isError:isErrorArtist } = use
       {isLoadingArtist && <Loading />}
         {isErrorArtist && <div> <h1>Error loading data.</h1></div>}
 
-        <h1 style={{ paddingTop:"30px" , paddingLeft:"80px"}}>{artist?.name}</h1>
+        <h1  style={{ paddingTop:"30px" , paddingLeft:"80px"}}>{artist?.name}</h1>
     <h3 style={{color:"grey" , paddingLeft:"80px"}}>Albums</h3>
 
 <div className="mt-5 mb-5">
@@ -112,7 +112,7 @@ const { data : artist, isLoading :isLoadingArtist, isError:isErrorArtist } = use
             {data?.map((album: any) => (
               <div className="albums-card" key={album.id} >
                 <img src={album?.images[0]?.url} />
-                <h2>{album.name}</h2>
+                <h2 title={album.name}>{album.name}</h2>
                 <h6 className='header-first'>{album.artists.map((art : any , index : number) => album.artists.length==0 || album.artists.length-1 ==index ? art.name : art.name + " , ")} </h6>
                <h6 className='header-second'>{album.release_date}</h6>
                <h6 className='header-third'>{album.total_tracks} {album.total_tracks <=1 ? "track" : "tracks"} </h6>
